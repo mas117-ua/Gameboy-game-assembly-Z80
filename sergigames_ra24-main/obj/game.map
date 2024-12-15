@@ -1,0 +1,245 @@
+SUMMARY:
+	ROM0: 3968 bytes used / 12416 free
+	WRAM0: 117 bytes used / 3979 free
+
+ROM0 bank #0:
+	SECTION: $0000-$00ff ($0100 bytes) ["Win Screen Tiles"]
+	         $0000 = win_screen_tiles
+	         $0100 = win_screen_tiles_end
+	SECTION: $0100-$014f ($0050 bytes) ["Header"]
+	SECTION: $0150-$03b1 ($0262 bytes) ["Main"]
+	         $0150 = main
+	         $015b = main.clear_text
+	         $01a7 = game_loop
+	         $01e6 = show_intro_screen
+	         $0231 = show_intro_screen.wait_for_start
+	         $023f = show_game_over_screen
+	         $0260 = show_game_over_screen.clear_loop
+	         $02e0 = show_game_over_screen.wait_for_restart
+	         $02f5 = show_game_over_screen.clear_game_over
+	         $02ff = show_game_over_screen.clear_press_b
+	         $0309 = show_game_over_screen.clear_score_screen
+	         $0358 = wait_vblank_start
+	         $0358 = wait_vblank_start.loop
+	         $0360 = switch_screen_off
+	         $0369 = setup_screen
+	         $036f = mem_copy
+	         $036f = mem_copy.loop
+	         $0378 = clear_oam
+	         $037e = clear_oam.loop
+	         $0383 = update_keys
+	         $03a3 = one_nibble
+	         $03b1 = my_ret
+	SECTION: $03b2-$07fd ($044c bytes) ["Enemy Code"]
+	         $03b2 = initialize_enemies
+	         $03bd = initialize_enemies.check_level2
+	         $03c8 = initialize_enemies.check_level3
+	         $03d3 = initialize_enemies.check_level4
+	         $03de = initialize_enemies.check_level5
+	         $03e9 = initialize_enemies.check_level6
+	         $03eb = initialize_enemies.set_enemies
+	         $0405 = initialize_enemies.delay_shoot_loop
+	         $0430 = initialize_enemies.setup_level1
+	         $0437 = initialize_enemies.l1_loop
+	         $044e = initialize_enemies.setup_level2
+	         $048b = initialize_enemies.setup_level3
+	         $04de = initialize_enemies.setup_level4
+	         $04e5 = initialize_enemies.l4_loop
+	         $0501 = initialize_enemies.setup_level5
+	         $0508 = initialize_enemies.l5_row1
+	         $0520 = initialize_enemies.l5_row2
+	         $0538 = initialize_enemies.l5_row3
+	         $054e = initialize_enemies.setup_level6
+	         $0555 = initialize_enemies.l6_loop
+	         $0579 = initialize_enemies.init_done
+	         $057d = copy_enemy_tiles_to_vram
+	         $059a = copy_enemy_tiles_to_vram.load_ship1
+	         $05a2 = copy_enemy_tiles_to_vram.load_ship2
+	         $05aa = copy_enemy_tiles_to_vram.load_ship3
+	         $05b2 = copy_enemy_tiles_to_vram.load_ship4
+	         $05ba = copy_enemy_tiles_to_vram.load_ship5
+	         $05c2 = copy_enemy_tiles_to_vram.load_ship6
+	         $05c8 = copy_enemy_tiles_to_vram.do_copy
+	         $05cf = copy_enemies_to_oam
+	         $05d7 = copy_enemies_to_oam.copy_loop
+	         $05f0 = copy_enemies_to_oam.skip_enemy
+	         $05f9 = copy_enemies_to_oam.continue
+	         $05fe = move_enemies
+	         $0614 = move_enemies.check_normal_delay
+	         $061a = move_enemies.continue_move
+	         $0623 = move_enemies.move_loop
+	         $0644 = move_enemies.speed_4
+	         $0648 = move_enemies.speed_5
+	         $064c = move_enemies.normal_speed
+	         $064e = move_enemies.got_speed
+	         $066e = move_enemies.move_right
+	         $0677 = move_enemies.move_left
+	         $0680 = move_enemies.move_up
+	         $068a = move_enemies.move_down
+	         $0694 = move_enemies.move_diagonal_right
+	         $06a4 = move_enemies.move_diagonal_left
+	         $06b4 = move_enemies.change_dir_left
+	         $06bb = move_enemies.change_dir_right
+	         $06c2 = move_enemies.change_dir_up
+	         $06c9 = move_enemies.change_dir_down
+	         $06d0 = move_enemies.change_diagonal_left
+	         $06d7 = move_enemies.change_diagonal_right
+	         $06dc = move_enemies.next_enemy
+	         $06e7 = clear_enemies
+	         $06ec = clear_enemies.clear_loop
+	         $06f5 = enemies_shoots
+	         $0705 = enemies_shoots.try_shoot
+	         $0712 = enemies_shoots.find_shooter
+	         $0734 = enemies_shoots.retry_find
+	         $0742 = enemies_shoots.force_find_active
+	         $0749 = enemies_shoots.check_next
+	         $0762 = enemies_shoots.found_active
+	         $0764 = enemies_shoots.shoot_with_enemy
+	         $077f = enemies_shoots.find_free_bullet
+	         $078c = enemies_shoots.bullet_found
+	         $07ac = enemies_shoots.no_free_bullets
+	         $07ad = enemies_shoots.end
+	         $07b9 = generate_random
+	         $07c8 = desactivate_enemy
+	         $07d3 = desactivate_enemy.multiply_loop
+	         $07db = desactivate_enemy.done_multiply
+	         $07f0 = desactivate_enemy.not_complete
+	         $07f4 = multiply
+	         $07f9 = multiply.loop
+	SECTION: $07fe-$0924 ($0127 bytes) ["Level Code"]
+	         $07fe = initialize_level_system
+	         $0808 = check_level_complete
+	         $0813 = advance_level
+	         $0826 = advance_level.game_complete
+	         $0829 = show_win_screen
+	         $083e = show_win_screen.clear_loop
+	         $08c2 = show_win_screen.wait_for_continue
+	         $08e4 = show_win_screen.clear_before_main
+	SECTION: $0925-$0a44 ($0120 bytes) ["HUD Tiles"]
+	         $0925 = hud_tiles
+	         $0a45 = hud_tiles_end
+	SECTION: $0a45-$0b3b ($00f7 bytes) ["Bullet"]
+	         $0a45 = initializeBullet
+	         $0a56 = initializeBullet.clearLoop
+	         $0a62 = FireBullet
+	         $0a69 = FireBullet.canShoot
+	         $0a79 = FireBullet.findFreeBullet
+	         $0a85 = FireBullet.foundFree
+	         $0aa9 = UpdateBulletLogic
+	         $0ab3 = UpdateBulletLogic.updateBullets
+	         $0ab5 = UpdateBulletLogic.updateLoop
+	         $0aca = UpdateBulletLogic.move_up
+	         $0ada = UpdateBulletLogic.move_down
+	         $0aea = UpdateBulletLogic.deactivateBullet
+	         $0af2 = UpdateBulletLogic.nextBullet
+	         $0afa = UpdateBulletSprites
+	         $0b00 = UpdateBulletSprites.clear_all_bullets
+	         $0b06 = UpdateBulletSprites.updateLoop
+	         $0b34 = UpdateBulletSprites.nextBullet
+	SECTION: $0b3c-$0c24 ($00e9 bytes) ["HUD Functions"]
+	         $0b3c = InitHUD
+	         $0b45 = InitHUD.copyTiles
+	         $0b82 = UpdateHUDLogic
+	         $0b8b = UpdateHUDLogic.checkLives
+	         $0b97 = UpdateHUDLogic.livesLoop
+	         $0ba1 = UpdateHUDLogic.emptyHearts
+	         $0ba5 = UpdateHUDGraphics
+	         $0bb3 = UpdateHUDGraphics.updateLives
+	         $0bc0 = UpdateHUDGraphics.livesDisplayLoop
+	         $0bcb = convert_score
+	         $0bef = div_a_by_b
+	         $0bf1 = div_a_by_b.div_loop
+	         $0bf8 = div_a_by_b.div_end
+	         $0bfb = print_score
+	         $0c0a = lose_a_life
+	SECTION: $0c25-$0cd4 ($00b0 bytes) ["Intro Screen Tiles"]
+	         $0c25 = intro_text_tiles
+	         $0cd5 = intro_text_tiles_end
+	SECTION: $0cd5-$0d5f ($008b bytes) ["Collision Enemies Code"]
+	         $0cd5 = check_bullet_enemy_collisions
+	         $0cda = check_bullet_enemy_collisions.enemy_loop
+	         $0cec = check_bullet_enemy_collisions.bullet_loop
+	         $0d4d = check_bullet_enemy_collisions.next_bullet
+	         $0d55 = check_bullet_enemy_collisions.next_enemy
+	SECTION: $0d60-$0ddf ($0080 bytes) ["Tiles"]
+	         $0d60 = nave
+	         $0d70 = naveend
+	         $0d70 = nave1
+	         $0d80 = nave1end
+	         $0d80 = nave2
+	         $0d90 = nave3
+	         $0d90 = nave2end
+	         $0da0 = nave3end
+	         $0da0 = nave4
+	         $0db0 = nave4end
+	         $0db0 = nave5
+	         $0dc0 = nave5end
+	         $0dc0 = nave6
+	         $0dd0 = bala_vertical
+	         $0dd0 = nave6end
+	         $0de0 = bala_vertical_end
+	SECTION: $0de0-$0e5f ($0080 bytes) ["Game Over Screen Tiles"]
+	         $0de0 = game_over_tiles
+	         $0e60 = game_over_tiles_end
+	SECTION: $0e60-$0ed1 ($0072 bytes) ["Player"]
+	         $0e60 = inicializarNave
+	         $0e7d = updateNave
+	         $0e81 = updateNave_HandleInput
+	         $0e9a = UpdatePlayer_UpdateSprite
+	         $0eb1 = TryShoot
+	         $0eba = MoveLeft
+	         $0ec6 = MoveRight
+	SECTION: $0ed2-$0f2c ($005b bytes) ["Fondo"]
+	         $0ed2 = mapafondo
+	         $0f2d = mapafondoend
+	SECTION: $0f2d-$0f6f ($0043 bytes) ["Collision Player Code"]
+	         $0f2d = check_bullet_player_collisions
+	         $0f38 = check_bullet_player_collisions.bullet_loop
+	         $0f69 = check_bullet_player_collisions.next_bullet
+	SECTION: $0f70-$0f7f ($0010 bytes) ["TilesFondo"]
+	         $0f70 = tilesfondo
+	         $0f80 = tilesfondoend
+	EMPTY: $0f80-$3fff ($3080 bytes)
+	TOTAL EMPTY: $3080 bytes
+
+WRAM0 bank #0:
+	SECTION: $c000-$c036 ($0037 bytes) ["Enemy Variables"]
+	         $c000 = wEnemyArray
+	         $c028 = wCurrentEnemies
+	         $c029 = wEnemyTimer
+	         $c02a = wEnemyDelayShoot
+	         $c034 = wShootTimer
+	         $c035 = wLastShootingEnemy
+	         $c036 = wFailedAttempts
+	SECTION: $c037-$c05f ($0029 bytes) ["BulletVariables"]
+	         $c037 = wBulletActive
+	         $c041 = wBulletPosX
+	         $c04b = wBulletPosY
+	         $c055 = wShootDelay
+	         $c056 = wBulletDirection
+	SECTION: $c060-$c069 ($000a bytes) ["HUD Variables"]
+	         $c060 = wScore
+	         $c061 = wLives
+	         $c062 = wScoreChanged
+	         $c063 = wLivesChanged
+	         $c064 = wScoreBuffer
+	         $c067 = wLivesBuffer
+	SECTION: $c06a-$c06c ($0003 bytes) ["VariablesNave"]
+	         $c06a = posicionNaveX
+	         $c06b = posicionNaveY
+	         $c06c = naveStatus
+	SECTION: $c06d-$c06e ($0002 bytes) ["Level Variables"]
+	         $c06d = wCurrentLevel
+	         $c06e = wLevelComplete
+	SECTION: $c06f-$c070 ($0002 bytes) ["Ball Data"]
+	         $c06f = wBallMomentumX
+	         $c070 = wBallMomentumY
+	SECTION: $c071-$c072 ($0002 bytes) ["Input Variables"]
+	         $c071 = wCurKeys
+	         $c072 = wNewKeys
+	SECTION: $c073-$c073 ($0001 byte) ["Game State"]
+	         $c073 = wGameState
+	SECTION: $c074-$c074 ($0001 byte) ["Counter"]
+	         $c074 = wFrameCounter
+	EMPTY: $c075-$cfff ($0f8b bytes)
+	TOTAL EMPTY: $0f8b bytes
