@@ -9,7 +9,6 @@
 ![Platform](https://img.shields.io/badge/platform-Game%20Boy-green.svg)
 ![Language](https://img.shields.io/badge/language-Assembly%20Z80-orange.svg)
 
-<img src="/api/placeholder/800/400" alt="Game Boy Space Shooter Banner"/>
 
 *A classic space shooter game for the Nintendo Game Boy*
 </div>
